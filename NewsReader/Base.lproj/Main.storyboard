@@ -96,14 +96,48 @@
         <!--Home-->
         <scene sceneID="yeT-b3-WOn">
             <objects>
-                <viewController id="lP9-4A-RHS" sceneMemberID="viewController">
+                <viewController id="lP9-4A-RHS" customClass="HomeViewController" customModule="NewsReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e6f-6g-HMF">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="C4S-ah-n5G">
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="news_cell" textLabel="bo3-T5-9RG" style="IBUITableViewCellStyleDefault" id="lgy-4Y-fIH">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lgy-4Y-fIH" id="CWl-pE-Q1R">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bo3-T5-9RG">
+                                                    <rect key="frame" x="20" y="0.0" width="353" height="43.666667938232422"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="FfB-xB-Ke1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="C4S-ah-n5G" firstAttribute="top" secondItem="FfB-xB-Ke1" secondAttribute="top" id="GDB-Wb-Rfg"/>
+                            <constraint firstItem="C4S-ah-n5G" firstAttribute="trailing" secondItem="FfB-xB-Ke1" secondAttribute="trailing" id="Yhq-3b-CaW"/>
+                            <constraint firstItem="C4S-ah-n5G" firstAttribute="leading" secondItem="FfB-xB-Ke1" secondAttribute="leading" id="dJe-rY-t4L"/>
+                            <constraint firstAttribute="bottom" secondItem="C4S-ah-n5G" secondAttribute="bottom" id="oIi-0g-nqh"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="nke-la-AcT"/>
+                    <connections>
+                        <outlet property="tableView" destination="C4S-ah-n5G" id="aSH-V0-a9f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="puN-aB-GzY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
